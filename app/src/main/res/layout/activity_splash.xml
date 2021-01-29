@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/yellow"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".activity_splash">
+
+  <ImageView
+      android:id="@+id/imge"
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      android:layout_weight="6"
+      android:transitionName="imageLogo"
+      android:src="@drawable/bulls_rent_logo_white"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+  <TextView
+      android:gravity="center|bottom"
+      android:id="@+id/textView"
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      android:layout_weight="1"
+      android:fontFamily="@font/bangers"
+      android:text="Cars Rent"
+      android:transitionName="LogoName"
+      android:textAlignment="center"
+      android:textColor="@color/white"
+      android:textSize="60sp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/imge" />
+
+  <TextView
+      android:gravity="center|top"
+      android:id="@+id/textView2"
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      android:layout_weight="1"
+      android:fontFamily="@font/antic"
+      android:text="Car rental app"
+      android:textAlignment="center"
+      android:textColor="@color/white"
+      android:textSize="24sp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+</LinearLayout>
