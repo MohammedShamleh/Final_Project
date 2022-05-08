@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "347326580421",
+    "project_id": "lab-project-c60a4",
+    "storage_bucket": "lab-project-c60a4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:347326580421:android:de10f9fe1990e9df5792ac",
+        "android_client_info": {
+          "package_name": "com.codeinger.mymeowbottomnavigationview"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "347326580421-680kfhl9nvofr4ti7teooq05q1d4kv4d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDoiBO-k7ntEzTtmx6gtH7991MCkN92KAc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "347326580421-680kfhl9nvofr4ti7teooq05q1d4kv4d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
