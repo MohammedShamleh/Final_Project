@@ -29,7 +29,7 @@ public class mainboard extends AppCompatActivity {
         bnv_Main.add(new MeowBottomNavigation.Model(3,R.drawable.person));
 
         bnv_Main.show(1,false);
-
+        replace(new HomeFragment());
         bnv_Main.setOnClickMenuListener(new Function1<MeowBottomNavigation.Model, Unit>() {
             @Override
             public Unit invoke(MeowBottomNavigation.Model model) {

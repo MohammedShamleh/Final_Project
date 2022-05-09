@@ -10,6 +10,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Pair;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -80,8 +81,7 @@ public class LoginActivity extends AppCompatActivity {
                                         startActivity(intent, options.toBundle());
                                         finish();
                                      }else{
-                                        Toast.makeText(LoginActivity.this, "Login Field", Toast.LENGTH_SHORT).show();
-
+                                            Toast_Error("Login Field");
                                     }
                                 }
                             });
@@ -109,5 +109,28 @@ public class LoginActivity extends AppCompatActivity {
         Sign_Up = findViewById(R.id.Sign_Up);
 
         Login = findViewById(R.id.Login);
+    }
+    void Toast_True(String message) {
+        Toast toast = new Toast(LoginActivity.this);
+
+        View view = LayoutInflater.from(LoginActivity.this)
+                .inflate(R.layout.toast_layout, null);
+
+        TextView tvMessage = view.findViewById(R.id.tvMessage);
+        tvMessage.setText(message);
+
+        toast.setView(view);
+        toast.show();
+    } void Toast_Error(String message) {
+        Toast toast = new Toast(LoginActivity.this);
+
+        View view = LayoutInflater.from(LoginActivity.this)
+                .inflate(R.layout.field, null);
+
+        TextView tvMessage = view.findViewById(R.id.tvMessage);
+        tvMessage.setText(message);
+
+        toast.setView(view);
+        toast.show();
     }
 }
