@@ -65,7 +65,7 @@ public class LoginActivity extends AppCompatActivity {
                 }else if(TextUtils.isEmpty(password)){
                     user_password.setError("Password cannot be empty");
                 }else{
-                    firebaseAuth.createUserWithEmailAndPassword(email,password )
+                    firebaseAuth.signInWithEmailAndPassword(email,password )
                             .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
@@ -78,6 +78,7 @@ public class LoginActivity extends AppCompatActivity {
                                         Pair[] pairs = new Pair[0];
                                         ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(LoginActivity.this, pairs);
                                         startActivity(intent, options.toBundle());
+                                        finish();
                                      }else{
                                         Toast.makeText(LoginActivity.this, "Login Field", Toast.LENGTH_SHORT).show();
 
