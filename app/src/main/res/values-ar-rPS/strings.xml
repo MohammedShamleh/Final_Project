@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">المشروع النهائي </string>
+    <string name="continu" translatable="false">قم بتسجيل الدخول للمتابعة</string>
+    <string name="email" translatable="false">الإيميل</string>
+    <string name="password" translatable="false">كلمة المرور</string>
+    <string name="forget_password" translatable="false">هل نسيت كلمة المرور ؟</string>
+    <string name="go" >إنطـلق</string>
+    <string name="new_user_sing_up" translatable="false">مستخدم جديد ؟ قم بالتسجيل</string>
+    <string name="hello">Hello there, Welcome Back</string>
+</resources>

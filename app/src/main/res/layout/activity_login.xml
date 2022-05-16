@@ -21,17 +21,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/bangers"
-        android:text="Hello there, Welcome Back"
+        android:text="@string/hello"
+        android:layout_marginBottom="4dp"
         android:textColor="@color/black"
         android:textSize="40sp"
         android:transitionName="LogoName" />
 
     <TextView
+        android:layout_marginTop="2dp"
         android:id="@+id/slogan_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/antic"
-        android:text="Sign In to continue"
+        android:text="@string/continu"
         android:textSize="18sp" />
 
     <LinearLayout
@@ -46,7 +48,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
-            android:hint="Email">
+            android:hint="@string/email">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
@@ -60,7 +62,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
-            android:hint="Password"
+            android:hint="@string/password"
             app:passwordToggleEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -76,7 +78,7 @@
             android:layout_gravity="right"
             android:background="@android:color/transparent"
             android:elevation="0dp"
-            android:text="Forget Password ?"
+            android:text="@string/forget_password"
             android:textSize="12sp" />
 
         <androidx.appcompat.widget.AppCompatButton
@@ -86,7 +88,7 @@
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
             android:background="#000"
-            android:text="Go "
+            android:text="@string/go"
             android:textColor="#fff"
             android:transitionName="sinin" />
 
@@ -97,7 +99,7 @@
             android:layout_gravity="center"
             android:background="@android:color/transparent"
             android:elevation="0dp"
-            android:text="New User ? SING UP"
+            android:text="@string/new_user_sing_up"
             android:transitionName="sinup" />
     </LinearLayout>
 </androidx.appcompat.widget.LinearLayoutCompat>

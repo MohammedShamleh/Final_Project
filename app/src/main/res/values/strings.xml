@@ -1,6 +1,13 @@
 <resources>
     <string name="app_name">Final Project</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="todo">TODO</string>
+
+    <string name="todo" translatable="false">TODO</string>
+    <string name="continu" translatable="false">Sign In to continue</string>
+    <string name="email" translatable="false">Email</string>
+    <string name="password" translatable="false">Password</string>
+    <string name="forget_password" translatable="false">Forget Password ?</string>
+    <string name="go" translatable="false">Go</string>
+    <string name="new_user_sing_up" translatable="false">New User ? SING UP</string>
+    <string name="hello">Hello there, Welcome Back</string>
 </resources>
