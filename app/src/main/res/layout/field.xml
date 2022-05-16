@@ -14,7 +14,7 @@
         app:cardElevation="4dp"
         app:cardMaxElevation="6dp"
 
-        app:cardBackgroundColor="@color/colorPrimary"
+        app:cardBackgroundColor="#AC2323"
         >
 
         <LinearLayout

@@ -1,12 +1,14 @@
 package com.codeinger.Final;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.ActivityOptions;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Pair;
@@ -18,6 +20,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
@@ -25,77 +30,33 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginActivity extends AppCompatActivity {
-    private SharedPreferences sp ;
+    private SharedPreferences sp;
     private FirebaseAuth firebaseAuth;
-    TextInputLayout user_password,Email;
+    TextInputLayout user_password, Email;
     ImageView imge;
     TextView logo;
-    Button Sign_Up,Login;
+    Button Sign_Up, Login;
+    WifiReceiver myReceiver = new WifiReceiver();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        sp = getSharedPreferences("Mysp", Context.MODE_PRIVATE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         firebaseAuth = FirebaseAuth.getInstance();
         initViews();
-        sp = getSharedPreferences("Mysp", Context.MODE_PRIVATE);
-        Sign_Up.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                /* Go to SignUpActivity with animation */
 
-                Intent intent = new Intent(LoginActivity.this, SignUpActivity.class);
-                Pair[] pairs = new Pair[4];
-                pairs[0] = new Pair<View, String>(imge, "imageLogo");
-                pairs[1] = new Pair<View, String>(logo, "textLogo");
-                pairs[2] = new Pair<View, String>(Sign_Up, "sinup");
-                pairs[3] = new Pair<View, String>(Login, "sginin");
-                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(LoginActivity.this, pairs);
-                startActivity(intent, options.toBundle());
-
-
-            }
-        });
-        Login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String email = Email.getEditText().getText().toString();
-                String password = user_password.getEditText().getText().toString();
-                if (TextUtils.isEmpty(email)) {
-                    Email.setError("Username cannot be empty");
-                }else if(TextUtils.isEmpty(password)){
-                    user_password.setError("Password cannot be empty");
-                }else{
-                    firebaseAuth.signInWithEmailAndPassword(email,password )
-                            .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                                @Override
-                                public void onComplete(@NonNull Task<AuthResult> task) {
-                                    if(task.isSuccessful()){
-                                        SharedPreferences.Editor editor = sp.edit();
-                                        editor.putString("name", email);
-                                        editor.putString("pass", password);
-                                        editor.commit();
-                                        Intent intent = new Intent(LoginActivity.this, mainboard.class);
-                                        Pair[] pairs = new Pair[0];
-                                        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(LoginActivity.this, pairs);
-                                        startActivity(intent, options.toBundle());
-                                        finish();
-                                     }else{
-                                            Toast_Error("Login Field");
-                                    }
-                                }
-                            });
-
-
-                }
-
-
-            }
-        });
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            IntentFilter filter = new IntentFilter();
+            filter.addAction("android.net.conn.CONNECTIVITY_CHANGE");
+            registerReceiver(myReceiver, filter);
+        }
 
 
     }
-    public void initViews(){
+
+    public void initViews() {
         //  Hooks to all xml elements activity_sign_up.xml
 
         Email = findViewById(R.id.Email);
@@ -110,6 +71,7 @@ public class LoginActivity extends AppCompatActivity {
 
         Login = findViewById(R.id.Login);
     }
+
     void Toast_True(String message) {
         Toast toast = new Toast(LoginActivity.this);
 
@@ -121,7 +83,9 @@ public class LoginActivity extends AppCompatActivity {
 
         toast.setView(view);
         toast.show();
-    } void Toast_Error(String message) {
+    }
+
+    void Toast_Error(String message) {
         Toast toast = new Toast(LoginActivity.this);
 
         View view = LayoutInflater.from(LoginActivity.this)
@@ -132,5 +96,87 @@ public class LoginActivity extends AppCompatActivity {
 
         toast.setView(view);
         toast.show();
+    }
+
+    @Override
+    protected void onDestroy() {
+
+        super.onDestroy();
+        unregisterReceiver(myReceiver);
+    }
+
+    public class WifiReceiver extends BroadcastReceiver {
+
+        private Context mContext;
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            mContext = context;
+
+
+            Sign_Up.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    /* Go to SignUpActivity with animation */
+
+                    Intent intent = new Intent(LoginActivity.this, SignUpActivity.class);
+                    Pair[] pairs = new Pair[4];
+                    pairs[0] = new Pair<View, String>(imge, "imageLogo");
+                    pairs[1] = new Pair<View, String>(logo, "textLogo");
+                    pairs[2] = new Pair<View, String>(Sign_Up, "sinup");
+                    pairs[3] = new Pair<View, String>(Login, "sginin");
+                    ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(LoginActivity.this, pairs);
+                    startActivity(intent, options.toBundle());
+
+
+                }
+            });
+            Login.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (intent.getAction().equals("android.net.conn.CONNECTIVITY_CHANGE")) {
+                        ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+                        NetworkInfo networkInfo = cm.getActiveNetworkInfo();
+                        if (networkInfo != null && networkInfo.isConnected()) {
+                            String email = Email.getEditText().getText().toString();
+                            String password = user_password.getEditText().getText().toString();
+                            if (TextUtils.isEmpty(email)) {
+                                Email.setError("Username cannot be empty");
+                            } else if (TextUtils.isEmpty(password)) {
+                                user_password.setError("Password cannot be empty");
+                            } else {
+                                firebaseAuth.signInWithEmailAndPassword(email, password)
+                                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                                            @Override
+                                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                                if (task.isSuccessful()) {
+                                                    SharedPreferences.Editor editor = sp.edit();
+                                                    editor.putString("name", email);
+                                                    editor.putString("pass", password);
+                                                    editor.commit();
+                                                    Intent intent = new Intent(LoginActivity.this, mainboard.class);
+                                                    Pair[] pairs = new Pair[0];
+                                                    ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(LoginActivity.this, pairs);
+                                                    startActivity(intent, options.toBundle());
+                                                    finish();
+                                                } else {
+                                                    Toast_Error("Login Field");
+                                                }
+                                            }
+                                        });
+                            }
+                        } else {
+                            Toast_Error("Check your internet connection");
+
+                        }
+
+                    }
+
+
+                }
+            });
+
+
+        }
     }
 }
