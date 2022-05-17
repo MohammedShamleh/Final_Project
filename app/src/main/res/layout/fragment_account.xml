@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#00FFDC41"
+    android:background="#FECE2F"
     android:gravity="center">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -38,12 +38,12 @@
             app:layout_constraintVertical_bias="0.895">
 
             <TextView
-                android:layout_width="150dp"
+                android:layout_width="130dp"
                 android:layout_height="40dp"
                 android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
+
                 android:paddingLeft="10dp"
-                android:text="Phone Number"
+                android:text="@string/phone_number"
                 android:textColor="@color/black"
                 android:textSize="18sp" />
 
@@ -71,12 +71,12 @@
             android:orientation="horizontal">
             <TextView
 
-                android:layout_width="150dp"
+                android:layout_width="130dp"
                 android:layout_height="40dp"
                 android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
+
                 android:paddingLeft="10dp"
-                android:text="User Name"
+                android:text="@string/username"
                 android:textColor="@color/black"
                 android:textSize="18sp"/>
             <TextView
@@ -102,12 +102,12 @@
            app:layout_constraintVertical_bias="0.645">
            <TextView
 
-               android:layout_width="150dp"
+               android:layout_width="130dp"
                android:layout_height="40dp"
                android:layout_marginStart="20dp"
-               android:layout_marginEnd="20dp"
+
                android:paddingLeft="10dp"
-               android:text="Email"
+               android:text="@string/email"
                android:textColor="@color/black"
                android:textSize="18sp"
                />
@@ -126,6 +126,7 @@
 
 
         <LinearLayout
+
             android:id="@+id/linearLayout3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -139,12 +140,13 @@
             app:layout_constraintVertical_bias="0.519">
 
             <TextView
-                android:layout_width="150dp"
+
+                android:layout_width="130dp"
                 android:layout_height="40dp"
                 android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
+
                 android:paddingLeft="10dp"
-                android:text="FullName"
+                android:text="@string/full_name"
                 android:textColor="@color/black"
                 android:textSize="18sp" />
 
@@ -189,9 +191,9 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
-            android:backgroundTint="#FECE2F"
+            android:backgroundTint="#000000"
             android:text="@string/Update"
-            android:textColor="#000000"
+            android:textColor="#FFFFFF"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

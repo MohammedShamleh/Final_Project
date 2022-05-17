@@ -28,11 +28,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:mbn_backgroundBottomColor="#ffffff"
         app:mbn_circleColor="#ffffff"
-        app:mbn_countBackgroundColor="@color/yellow"
+        app:mbn_countBackgroundColor="#fece2f"
         app:mbn_countTextColor="#ffffff"
         app:mbn_defaultIconColor="#90a4ae"
         app:mbn_rippleColor="#2f424242"
-        app:mbn_selectedIconColor="@color/yellow"
+        app:mbn_selectedIconColor="#fece2f"
         app:mbn_shadowColor="#1f212121" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

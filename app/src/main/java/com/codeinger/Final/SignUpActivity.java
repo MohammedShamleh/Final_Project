@@ -179,7 +179,12 @@ public class SignUpActivity extends AppCompatActivity {
                                                     @Override
                                                     public void onComplete(@NonNull Task<DocumentReference> task) {
                                                         if (task.isSuccessful()) {
-                                                            Toast_True("Welcome" + Name);
+                                                            if (Locale.getDefault().getLanguage().equals("en")) {
+                                                                Toast_True("Welcome " + Name);
+                                                            } else if (Locale.getDefault().getLanguage().equals("ar")) {
+                                                                Toast_True(Name+"مـرحبـاً ");
+                                                            }
+
                                                             startActivity(new Intent(SignUpActivity.this, mainboard.class));
                                                             finish();
                                                         }
@@ -188,14 +193,24 @@ public class SignUpActivity extends AppCompatActivity {
                                             }
 
                                             } else {
-                                                Toast_Error("Registration failed, please make sure the input is correct");
+                                                if (Locale.getDefault().getLanguage().equals("en")) {
+                                                    Toast_Error("Registration failed, please make sure the input is correct");
+                                                } else if (Locale.getDefault().getLanguage().equals("ar")) {
+                                                    Toast_Error("فشل التسجيل ، يرجى التأكد من صحة الإدخال");                                                }
+
                                                 //      Toast.makeText(SignUpActivity.this, "No", Toast.LENGTH_SHORT).show();
                                             }
                                         }
                                     });
                         }
                     } else {
-                        Toast_Error("Check your internet connection");
+                        if (Locale.getDefault().getLanguage().equals("en")) {
+                            Toast_Error("Check your internet connection");
+                        } else if (Locale.getDefault().getLanguage().equals("ar")) {
+                            Toast_Error("تحقق من اتصالك بالإنترنت");
+                        }
+
+
 
                     }
 

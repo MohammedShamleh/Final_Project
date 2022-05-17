@@ -18,4 +18,5 @@
     <string name="welcome">Welcome</string>
     <string name="logout">Logout</string>
     <string name="Update">Update</string>
+    <string name="full_name_fir">Full Name :</string>
 </resources>

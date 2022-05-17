@@ -172,6 +172,11 @@ public class LoginActivity extends AppCompatActivity {
                                                     Intent intent = new Intent(LoginActivity.this, mainboard.class);
                                                     Pair[] pairs = new Pair[0];
                                                     ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(LoginActivity.this, pairs);
+                                                    if (Locale.getDefault().getLanguage().equals("en")) {
+                                                        Toast_True("Welcome ");
+                                                    } else if (Locale.getDefault().getLanguage().equals("ar")) {
+                                                        Toast_True("مـرحبـاً ");
+                                                    }
                                                     startActivity(intent, options.toBundle());
                                                     finish();
                                                 } else {

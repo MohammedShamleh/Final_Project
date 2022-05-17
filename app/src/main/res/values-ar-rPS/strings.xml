@@ -17,5 +17,6 @@
     <string name="todo">TODO</string>
     <string name="logout">تسجيل خروج</string>
     <string name="Update">تحديث البيانات</string>
+    <string name="full_name_fir">الاسم كامل : </string>
 
 </resources>
