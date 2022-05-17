@@ -4,6 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.pm.ActivityInfo;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Build;
@@ -25,10 +26,12 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
+import java.util.Locale;
 
 public class SignUpActivity extends AppCompatActivity {
     //  Variables
@@ -45,6 +48,7 @@ public class SignUpActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sign_up);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         initViews();
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseFirestore = firebaseFirestore.getInstance();
         // Buttn Already Have an account? LogIn
@@ -117,28 +121,56 @@ public class SignUpActivity extends AppCompatActivity {
                         String PhoneNo = regPhoneNo.getEditText().getText().toString();
                         String Password = regPassword.getEditText().getText().toString();
                         if (TextUtils.isEmpty(Name)) {
-                            regName.setError("Name field must not be empty");
+                            if (Locale.getDefault().getLanguage().equals("en")) {
+                                regName.setError("Name field must not be empty");
+                            } else if (Locale.getDefault().getLanguage().equals("ar")) {
+                                regName.setError("يجب ألا يكون حقل الاسم فارغًا");
+                            }
                             return;
                         } else if (TextUtils.isEmpty(Username)) {
-                            regUsername.setError("User Name field must not be empty");
+                            if (Locale.getDefault().getLanguage().equals("en")) {
+                                regUsername.setError("User Name field must not be empty");
+                            } else if (Locale.getDefault().getLanguage().equals("ar")) {
+                                regUsername.setError("يجب ألا يكون حقل اسم المستخدم فارغًا");
+                            }
                             return;
+
+
                         } else if (TextUtils.isEmpty(Email)) {
-                            regEmail.setError("Email field must not be empty");
+
+                            if (Locale.getDefault().getLanguage().equals("en")) {
+                                regEmail.setError("Email field must not be empty");
+                            } else if (Locale.getDefault().getLanguage().equals("ar")) {
+                                regEmail.setError("يجب ألا يكون حقل البريد الإلكتروني فارغًا");
+                            }
                             return;
                         } else if (TextUtils.isEmpty(PhoneNo)) {
-                            regPhoneNo.setError("Phone Number field must not be empty");
+
+                            if (Locale.getDefault().getLanguage().equals("en")) {
+                                regPhoneNo.setError("Phone Number field must not be empty");
+                            } else if (Locale.getDefault().getLanguage().equals("ar")) {
+                                regPhoneNo.setError("يجب ألا يكون حقل رقم الهاتف فارغًا");
+                            }
                             return;
                         } else if (TextUtils.isEmpty(Password)) {
-                            regPassword.setError("Password field must not be empty");
+                            if (Locale.getDefault().getLanguage().equals("en")) {
+                                regPassword.setError("Password field must not be empty");
+                            } else if (Locale.getDefault().getLanguage().equals("ar")) {
+                                regPassword.setError("يجب ألا يكون حقل كلمة المرور فارغًا");
+                            }
                             return;
+
                         } else {
                             firebaseAuth.createUserWithEmailAndPassword(Email, Password)
                                     .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                                         @Override
                                         public void onComplete(@NonNull Task<AuthResult> task) {
                                             if (task.isSuccessful()) {
+                                            FirebaseUser user =  firebaseAuth.getCurrentUser();
+                                            if(user != null){
                                                 HashMap<String, String> data = new HashMap<>();
                                                 data.put("FullName", Name);
+                                                data.put("uid",user.getUid());
                                                 data.put("Username", Username);
                                                 data.put("Email", Email);
                                                 data.put("PhoneNo", PhoneNo);
@@ -153,6 +185,8 @@ public class SignUpActivity extends AppCompatActivity {
                                                         }
                                                     }
                                                 });
+                                            }
+
                                             } else {
                                                 Toast_Error("Registration failed, please make sure the input is correct");
                                                 //      Toast.makeText(SignUpActivity.this, "No", Toast.LENGTH_SHORT).show();
@@ -174,7 +208,6 @@ public class SignUpActivity extends AppCompatActivity {
 
     @Override
     protected void onDestroy() {
-
         super.onDestroy();
         unregisterReceiver(myReceiver);
     }

@@ -8,4 +8,14 @@
     <string name="go" >إنطـلق</string>
     <string name="new_user_sing_up" translatable="false">مستخدم جديد ؟ قم بالتسجيل</string>
     <string name="hello">Hello there, Welcome Back</string>
+    <string name="signup">قم بالتسجيل لبدء رحلتك الجديدة</string>
+    <string name="full_name">الإسم بالكامل</string>
+    <string name="username">اسم المستخدم </string>
+    <string name="login">هل لديك حساب بالفعل ؟ تسجيل الدخول</string>
+    <string name="phone_number">رقم الهاتف</string>
+    <string name="welcome">Welcome</string>
+    <string name="todo">TODO</string>
+    <string name="logout">تسجيل خروج</string>
+    <string name="Update">تحديث البيانات</string>
+
 </resources>

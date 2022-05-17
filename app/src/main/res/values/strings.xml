@@ -10,4 +10,12 @@
     <string name="go" translatable="false">Go</string>
     <string name="new_user_sing_up" translatable="false">New User ? SING UP</string>
     <string name="hello">Hello there, Welcome Back</string>
+    <string name="signup">SignUp to start your new Journey</string>
+    <string name="full_name">Full Name</string>
+    <string name="username">Username</string>
+    <string name="login">Already Have an account? Login</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="welcome">Welcome</string>
+    <string name="logout">Logout</string>
+    <string name="Update">Update</string>
 </resources>

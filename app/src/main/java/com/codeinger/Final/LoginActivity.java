@@ -29,6 +29,8 @@ import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+import java.util.Locale;
+
 public class LoginActivity extends AppCompatActivity {
     private SharedPreferences sp;
     private FirebaseAuth firebaseAuth;
@@ -141,9 +143,22 @@ public class LoginActivity extends AppCompatActivity {
                             String email = Email.getEditText().getText().toString();
                             String password = user_password.getEditText().getText().toString();
                             if (TextUtils.isEmpty(email)) {
-                                Email.setError("Username cannot be empty");
+                                if (Locale.getDefault().getLanguage().equals("en")) {
+                                    Email.setError("Username cannot be empty");
+
+                                } else if (Locale.getDefault().getLanguage().equals("ar")) {
+                                    Email.setError("اسم المستخدم لا يمكن أن يكون فارغا");
+                                }
+
                             } else if (TextUtils.isEmpty(password)) {
-                                user_password.setError("Password cannot be empty");
+                                if (Locale.getDefault().getLanguage().equals("en")) {
+                                    user_password.setError("Password cannot be empty");
+
+                                } else if (Locale.getDefault().getLanguage().equals("ar")) {
+                                    user_password.setError("كلمة المرور لا يمكن أن تكون فارغة");
+
+                                }
+
                             } else {
                                 firebaseAuth.signInWithEmailAndPassword(email, password)
                                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -160,14 +175,26 @@ public class LoginActivity extends AppCompatActivity {
                                                     startActivity(intent, options.toBundle());
                                                     finish();
                                                 } else {
-                                                    Toast_Error("Login Field");
+                                                    if (Locale.getDefault().getLanguage().equals("en")) {
+                                                        Toast_Error("Login Field");
+
+                                                    } else if (Locale.getDefault().getLanguage().equals("ar")) {
+                                                        Toast_Error("فشل تسجيل الدخول ، تأكد من الإيميل أو كلمة المرور");
+                                                    }
+
                                                 }
                                             }
                                         });
                             }
                         } else {
-                            Toast_Error("Check your internet connection");
 
+                            if (Locale.getDefault().getLanguage().equals("en")) {
+                                Toast_Error("Check your internet connection");
+                            }
+                            else if (Locale.getDefault().getLanguage().equals("ar")) {
+                                Toast_Error("تحقق من اتصالك بالإنترنت");
+
+                            }
                         }
 
                     }

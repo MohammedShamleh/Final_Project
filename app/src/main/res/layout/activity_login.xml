@@ -7,6 +7,8 @@
     android:background="@color/white"
     android:orientation="vertical"
     android:padding="16dp"
+    android:screenOrientation="portrait"
+    android:configChanges="keyboardHidden|orientation|screenSize"
     tools:context=".LoginActivity">
 
     <ImageView
