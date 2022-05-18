@@ -3,8 +3,33 @@ package com.codeinger.Final.car;
 public class Car {
     int img;
     String Name;
-    String Model;
-    Double Price;
+    String Transmission;
+    String Nav ;
+    String Minimum  ;
+
+    public String getTransmission() {
+        return Transmission;
+    }
+
+    public void setTransmission(String transmission) {
+        Transmission = transmission;
+    }
+
+    public String getNav() {
+        return Nav;
+    }
+
+    public void setNav(String nav) {
+        Nav = nav;
+    }
+
+    public String getMinimum() {
+        return Minimum;
+    }
+
+    public void setMinimum(String minimum) {
+        Minimum = minimum;
+    }
 
     public int getImg() {
         return img;
@@ -22,29 +47,16 @@ public class Car {
         Name = name;
     }
 
-    public String getModel() {
-        return Model;
-    }
-
-    public void setModel(String model) {
-        Model = model;
-    }
-
-    public Double getPrice() {
-        return Price;
-    }
-
-    public void setPrice(Double price) {
-        Price = price;
+    public Car(int img, String name, String transmission, String nav, String minimum) {
+        this.img = img;
+        Name = name;
+        Transmission = transmission;
+        Nav = nav;
+        Minimum = minimum;
     }
 
     public Car() {
     }
 
-    public Car(int img, String name, String model, Double price) {
-        this.img = img;
-        this.Name = name;
-        this.Model = model;
-        this.Price = price;
-    }
+
 }

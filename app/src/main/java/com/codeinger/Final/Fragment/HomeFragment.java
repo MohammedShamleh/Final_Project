@@ -31,16 +31,22 @@ public class HomeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
         ArrayList<Car> data = new ArrayList<>();
-        data.add(new Car(R.drawable.car_1, "Honda", "2017", 3456.0));
-        data.add(new Car(R.drawable.car_2, "Romeo", "2012", 3566.0));
-        data.add(new Car(R.drawable.car_3, "BMW", "2016", 8456.0));
-        data.add(new Car(R.drawable.car_4, "Bentley", "2019", 7456.0));
-        data.add(new Car(R.drawable.car_5, "Ford", "1999", 3656.0));
-        data.add(new Car(R.drawable.car_6, "Kia", "2021", 5676.0));
-        data.add(new Car(R.drawable.car_7, "Cadillac", "2015", 9856.0));
-        data.add(new Car(R.drawable.car_8, "Datsun ", "2014", 57456.0));
-        data.add(new Car(R.drawable.car_9, "Lexus", "2011", 3667.0));
-        data.add(new Car(R.drawable.car_10, "Nissan", "2020", 7756.0));
+        data.add(new Car(R.drawable.car_1, "Honda", "Manual","Subject to availability","21"));
+        data.add(new Car(R.drawable.car_2, "Honda", "Manual","Subject to availability","21"));
+        data.add(new Car(R.drawable.car_3, "Honda", "Manual","Subject to availability","21"));
+        data.add(new Car(R.drawable.car_4, "Honda", "Manual","Subject to availability","21"));
+        data.add(new Car(R.drawable.car_5, "Honda", "Manual","Subject to availability","21"));
+        data.add(new Car(R.drawable.car_6, "Honda", "Manual","Subject to availability","21"));
+        data.add(new Car(R.drawable.car_7, "Honda", "Manual","Subject to availability","21"));
+        data.add(new Car(R.drawable.car_8, "Honda", "Manual","Subject to availability","21"));
+        data.add(new Car(R.drawable.car_9, "Honda", "Manual","Subject to availability","21"));
+        data.add(new Car(R.drawable.car_1, "Honda", "Manual","Subject to availability","21"));
+        data.add(new Car(R.drawable.car_10, "Honda", "Manual","Subject to availability","21"));
+        data.add(new Car(R.drawable.car_11, "Honda", "Manual","Subject to availability","21"));
+        data.add(new Car(R.drawable.car_3, "Honda", "Manual","Subject to availability","21"));
+        data.add(new Car(R.drawable.car_6, "Honda", "Manual","Subject to availability","21"));
+        data.add(new Car(R.drawable.car_9, "Honda", "Manual","Subject to availability","21"));
+
         RecyclerView rv = view.findViewById(R.id.rv);
         rv.setHasFixedSize(true);
         rv.setLayoutManager(new LinearLayoutManager(getContext()));

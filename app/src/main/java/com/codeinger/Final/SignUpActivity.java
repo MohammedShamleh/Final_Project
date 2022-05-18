@@ -166,39 +166,38 @@ public class SignUpActivity extends AppCompatActivity {
                                         @Override
                                         public void onComplete(@NonNull Task<AuthResult> task) {
                                             if (task.isSuccessful()) {
-                                            FirebaseUser user =  firebaseAuth.getCurrentUser();
-                                            if(user != null){
-                                                HashMap<String, String> data = new HashMap<>();
-                                                data.put("FullName", Name);
-                                                data.put("uid",user.getUid());
-                                                data.put("Username", Username);
-                                                data.put("Email", Email);
-                                                data.put("PhoneNo", PhoneNo);
+                                                FirebaseUser user = firebaseAuth.getCurrentUser();
+                                                if (user != null) {
+                                                    HashMap<String, String> data = new HashMap<>();
+                                                    data.put("FullName", Name);
+                                                    data.put("uid", user.getUid());
+                                                    data.put("Username", Username);
+                                                    data.put("Email", Email);
+                                                    data.put("PhoneNo", PhoneNo);
 
-                                                firebaseFirestore.collection("user").add(data).addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
-                                                    @Override
-                                                    public void onComplete(@NonNull Task<DocumentReference> task) {
-                                                        if (task.isSuccessful()) {
-                                                            if (Locale.getDefault().getLanguage().equals("en")) {
-                                                                Toast_True("Welcome " + Name);
-                                                            } else if (Locale.getDefault().getLanguage().equals("ar")) {
-                                                                Toast_True(Name+"مـرحبـاً ");
+                                                    firebaseFirestore.collection("user").add(data).addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
+                                                        @Override
+                                                        public void onComplete(@NonNull Task<DocumentReference> task) {
+                                                            if (task.isSuccessful()) {
+                                                                if (Locale.getDefault().getLanguage().equals("en")) {
+                                                                    Toast_True("Welcome " + Name);
+                                                                } else if (Locale.getDefault().getLanguage().equals("ar")) {
+                                                                    Toast_True(Name + "مـرحبـاً ");
+                                                                }
+
+                                                                startActivity(new Intent(SignUpActivity.this, mainboard.class));
+                                                                finish();
                                                             }
-
-                                                            startActivity(new Intent(SignUpActivity.this, mainboard.class));
-                                                            finish();
                                                         }
-                                                    }
-                                                });
-                                            }
-
+                                                    });
+                                                }
                                             } else {
                                                 if (Locale.getDefault().getLanguage().equals("en")) {
                                                     Toast_Error("Registration failed, please make sure the input is correct");
                                                 } else if (Locale.getDefault().getLanguage().equals("ar")) {
-                                                    Toast_Error("فشل التسجيل ، يرجى التأكد من صحة الإدخال");                                                }
+                                                    Toast_Error("فشل التسجيل ، يرجى التأكد من صحة الإدخال");
+                                                }
 
-                                                //      Toast.makeText(SignUpActivity.this, "No", Toast.LENGTH_SHORT).show();
                                             }
                                         }
                                     });
@@ -209,9 +208,6 @@ public class SignUpActivity extends AppCompatActivity {
                         } else if (Locale.getDefault().getLanguage().equals("ar")) {
                             Toast_Error("تحقق من اتصالك بالإنترنت");
                         }
-
-
-
                     }
 
                 }

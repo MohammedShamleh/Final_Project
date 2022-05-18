@@ -18,5 +18,10 @@
     <string name="logout">تسجيل خروج</string>
     <string name="Update">تحديث البيانات</string>
     <string name="full_name_fir">الاسم كامل : </string>
+    <string name="data_edit_screen">شاشة تعديل البيانات</string>
+    <string name="nav_system">نظام الملاحة :</string>
+    <string name="transmission">ناقل حركة :</string>
+    <string name="minimum_age">الحد الإدنى للعمر :</string>
+
 
 </resources>

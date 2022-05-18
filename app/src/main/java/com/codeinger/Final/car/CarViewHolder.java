@@ -13,17 +13,21 @@ import com.codeinger.Final.R;
 public class CarViewHolder extends RecyclerView.ViewHolder {
     View view;
     TextView namecar;
+    TextView Transmission;
+    TextView NavSystem;
+    TextView MinimumAge;
     ImageView image;
-    TextView model;
-    TextView price;
+
 
     public CarViewHolder(@NonNull View itemView) {
 
         super(itemView);
         view = itemView;
-        namecar = itemView.findViewById(R.id.name);
+        namecar = itemView.findViewById(R.id.carname);
         image = itemView.findViewById(R.id.imageView);
-        model = itemView.findViewById(R.id.model);
-        price = itemView.findViewById(R.id.price);
+        Transmission = itemView.findViewById(R.id.Transmission);
+        NavSystem = itemView.findViewById(R.id.NavSystem);
+        MinimumAge = itemView.findViewById(R.id.MinimumAge);
+
     }
 }

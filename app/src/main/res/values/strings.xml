@@ -19,4 +19,9 @@
     <string name="logout">Logout</string>
     <string name="Update">Update</string>
     <string name="full_name_fir">Full Name :</string>
+    <!-- TODO: Remove or change this placeholder text -->
+     <string name="data_edit_screen">Data edit screen</string>
+    <string name="transmission">Transmission :</string>
+    <string name="nav_system">Nav System :</string>
+    <string name="minimum_age">Minimum age :</string>
 </resources>
