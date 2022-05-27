@@ -48,11 +48,11 @@ public class HomeFragment extends Fragment {
                     Toast.makeText(getActivity(), "dtat sss ", Toast.LENGTH_SHORT).show();
 
                     Iterable<DataSnapshot> data = task.getResult().getChildren();
-                    for (DataSnapshot snap : data) {
-                        Car s = snap.getValue(Car.class);
-                        cars.add(s);
-
-                    }
+//                    for (DataSnapshot snap : data) {
+//                        Car s = snap.getValue(Car.class);
+//                        cars.add(s);
+//
+//                    }
                     CarAdapter adapter = new CarAdapter(cars);
                     rv.setLayoutManager(new LinearLayoutManager(getContext()));
                     rv.setHasFixedSize(true);
@@ -67,17 +67,7 @@ public class HomeFragment extends Fragment {
         return view;
     }
 
-//    public static void data(ArrayList<Car> data) {
-//
-//        data.add(new Car(R.drawable.car_1, "Honda", "Manual"));
-//        data.add(new Car(R.drawable.car_1, "Honda", "Manual"));
-//        data.add(new Car(R.drawable.car_1, "Honda", "Manual"));
-//        data.add(new Car(R.drawable.car_1, "Honda", "Manual"));
-//        data.add(new Car(R.drawable.car_1, "Honda", "Manual"));
-//        data.add(new Car(R.drawable.car_1, "Honda", "Manual"));
-//        data.add(new Car(R.drawable.car_1, "Honda", "Manual"));
-//
-//    }
+
 
 
 }
