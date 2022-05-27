@@ -1,14 +1,14 @@
 <resources>
-    <string name="app_name">Final Project</string>
+    <string name="app_name" translatable="false">Final Project</string>
     <!-- TODO: Remove or change this placeholder text -->
 
     <string name="todo" translatable="false">TODO</string>
-    <string name="continu" translatable="false">Sign In to continue</string>
-    <string name="email" translatable="false">Email</string>
-    <string name="password" translatable="false">Password</string>
-    <string name="forget_password" translatable="false">Forget Password ?</string>
-    <string name="go" translatable="false">Go</string>
-    <string name="new_user_sing_up" translatable="false">New User ? SING UP</string>
+    <string name="continu">Sign In to continue</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="forget_password">Forget Password ?</string>
+    <string name="go">Go</string>
+    <string name="new_user_sing_up">New User ? SING UP</string>
     <string name="hello">Hello there, Welcome Back</string>
     <string name="signup">SignUp to start your new Journey</string>
     <string name="full_name">Full Name</string>
@@ -24,4 +24,6 @@
     <string name="transmission">Transmission :</string>
     <string name="nav_system">Nav System :</string>
     <string name="minimum_age">Minimum age :</string>
+    <string name="car_rental_app" translatable="false">Car rental app</string>
+    <string name="cars_rent" translatable="false">Cars Rent</string>
 </resources>

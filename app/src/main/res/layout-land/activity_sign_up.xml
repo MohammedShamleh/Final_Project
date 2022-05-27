@@ -4,12 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FDFDFD"
-    android:orientation="vertical"
+    android:background="@color/white"
+    android:orientation="horizontal"
     android:padding="16dp"
-    android:gravity="center"
-    tools:context=".Fragment.UpdateFragment">
-
+    tools:context=".SignUpActivity">
+    <LinearLayout
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
     <ImageView
         android:id="@+id/logoImage"
         android:layout_width="match_parent"
@@ -25,9 +29,24 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:fontFamily="@font/bangers"
-        android:text="@string/data_edit_screen"
+        android:text="@string/welcome"
         android:textColor="@color/black"
         android:textSize="40sp" />
+    </LinearLayout>
+    <LinearLayout
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/antic"
+        android:text="@string/signup"
+        android:textSize="18sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -37,7 +56,7 @@
         android:orientation="vertical">
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/updName"
+            android:id="@+id/regName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/full_name">
@@ -45,11 +64,12 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+
                 android:inputType="text" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/updusername"
+            android:id="@+id/regUsername"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/username"
@@ -64,7 +84,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/updEmail"
+            android:id="@+id/regEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/email">
@@ -72,12 +92,13 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+
                 android:inputType="textEmailAddress"
                 tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/updPhoneNo"
+            android:id="@+id/regPhoneNo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/phone_number">
@@ -88,16 +109,36 @@
                 android:inputType="number" />
         </com.google.android.material.textfield.TextInputLayout>
 
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/regPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/password"
+            app:passwordToggleEnabled="true">
 
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword" />
+        </com.google.android.material.textfield.TextInputLayout>
     </LinearLayout>
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/updBtn"
+        android:id="@+id/regBtnGo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/black"
-        android:text="@string/Update"
-        android:textColor="@color/white" />
+        android:text="@string/go"
+        android:textColor="@color/white"
+        android:transitionName="sinin" />
 
-
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/regBtnLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:padding="10dp"
+        android:text="@string/login"
+        android:transitionName="sinup" />
+    </LinearLayout>
 </androidx.appcompat.widget.LinearLayoutCompat>

@@ -8,8 +8,8 @@
     android:orientation="vertical"
     android:padding="16dp"
     android:screenOrientation="portrait"
-    android:configChanges="keyboardHidden|orientation|screenSize"
     tools:context=".LoginActivity">
+<!--    android:configChanges="keyboardHidden|orientation|screenSize"-->
 
     <ImageView
         android:id="@+id/imageLogo"
