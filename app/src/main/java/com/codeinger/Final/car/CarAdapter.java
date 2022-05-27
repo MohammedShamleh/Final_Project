@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.codeinger.Final.R;
 
 import java.util.ArrayList;
@@ -34,13 +35,10 @@ public class CarAdapter extends RecyclerView.Adapter<CarViewHolder> {
     public void onBindViewHolder(@NonNull CarViewHolder holder, int position) {
         Car car = cars.get(position);
         holder.namecar.setText(car.getName());
-        holder.MinimumAge.setText(car.getMinimum());
-        holder.NavSystem.setText(car.getNav());
+
         holder.Transmission.setText(car.getTransmission());
-        holder.image.setImageResource(car.getImg());
-
-
-    }
+        if (!car.getImg().isEmpty())
+            Glide.with(holder.itemView).load(car.getImg()).into(holder.image);    }
 
     @Override
     public int getItemCount() {
