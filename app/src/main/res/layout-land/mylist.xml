@@ -1,17 +1,19 @@
-<androidx.cardview.widget.CardView
-    android:id="@+id/cardId"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<!--<androidx.cardview.widget.CardView-->
+<!--    android:id="@+id/cardId"-->
+<!--    xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:layout_margin="5dp"-->
+<!--    app:cardBackgroundColor="#FDFDFD"-->
+<!--    app:cardCornerRadius="8dp"-->
+<!--    app:cardElevation="8dp"-->
+<!--    app:cardMaxElevation="10dp"-->
+<!--    app:cardPreventCornerOverlap="true"-->
+<!--    app:cardUseCompatPadding="true">-->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="5dp"
-    app:cardBackgroundColor="#FDFDFD"
-    app:cardCornerRadius="8dp"
-    app:cardElevation="8dp"
-    app:cardMaxElevation="10dp"
-    app:cardPreventCornerOverlap="true"
-    app:cardUseCompatPadding="true">
-<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/cardId"
     android:layout_width="match_parent"
     android:layout_height="300dp">
 
@@ -60,9 +62,9 @@
         app:layout_constraintVertical_bias="0.972">
 
         <TextView
-            android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="@string/transmission"
             android:textColor="@color/black"
             android:textSize="16sp"
@@ -70,9 +72,9 @@
 
         <TextView
             android:id="@+id/Transmission"
-            android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="Manual"
             android:textColor="@color/black"
             android:textSize="16sp"
@@ -82,4 +84,4 @@
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
-</androidx.cardview.widget.CardView>
+    <!--</androidx.cardview.widget.CardView>-->
