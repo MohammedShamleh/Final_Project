@@ -16,11 +16,14 @@
         android:contentDescription="@string/todo"
         android:scaleType="centerCrop"
         android:src="@drawable/bulls_rent_logo_white"
-        android:transitionName="imageLogo" />
+        android:transitionName="imageLogo"
+       android:layout_marginBottom="80dp"     />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+
         android:orientation="horizontal">
 
         <TextView
@@ -45,7 +48,10 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginBottom="10dp"
+
+        >
 
         <TextView
             android:layout_width="0dp"
@@ -67,6 +73,8 @@
     </LinearLayout>
 
     <LinearLayout
+        android:layout_marginBottom="10dp"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -91,6 +99,7 @@
 
 
     <LinearLayout
+        android:layout_marginBottom="10dp"
 
         android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
@@ -119,6 +128,8 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnUpdate"
+        android:layout_marginBottom="10dp"
+
         style="@style/TextAppearance.MaterialComponents.Button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -128,6 +139,8 @@
         android:textSize="18sp" />
 
     <androidx.appcompat.widget.AppCompatButton
+        android:layout_marginTop="10dp"
+
         android:id="@+id/btnlogout"
         style="@style/TextAppearance.MaterialComponents.Button"
         android:layout_width="match_parent"

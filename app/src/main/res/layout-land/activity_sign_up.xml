@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:orientation="horizontal"
-    android:padding="16dp"
+    android:padding="6dp"
     tools:context=".SignUpActivity">
     <LinearLayout
         android:gravity="center"

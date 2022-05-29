@@ -45,14 +45,16 @@ public class HomeFragment extends Fragment {
             @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {
                 if (task.isSuccessful()) {
-                    Toast.makeText(getActivity(), "dtat sss ", Toast.LENGTH_SHORT).show();
+              //      Toast.makeText(getActivity(), "dtat sss ", Toast.LENGTH_SHORT).show();
 
                     Iterable<DataSnapshot> data = task.getResult().getChildren();
-//                    for (DataSnapshot snap : data) {
-//                        Car s = snap.getValue(Car.class);
-//                        cars.add(s);
-//
-//                    }
+
+                    for (DataSnapshot snap : data) {
+                        Car s = snap.getValue(Car.class);
+                        cars.add(s);
+
+                    }
+
                     CarAdapter adapter = new CarAdapter(cars);
                     rv.setLayoutManager(new LinearLayoutManager(getContext()));
                     rv.setHasFixedSize(true);
