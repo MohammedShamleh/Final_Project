@@ -58,7 +58,10 @@
         <entry key="..\:/Users/Photo/AndroidStudioProjects/MeowBottomNavigationEx/app/src/main/res/layout/fragment_home.xml" value="0.17028985507246377" />
         <entry key="..\:/Users/Photo/AndroidStudioProjects/MeowBottomNavigationEx/app/src/main/res/layout/fragment_profile.xml" value="0.17028985507246377" />
         <entry key="..\:/Users/Photo/AndroidStudioProjects/MeowBottomNavigationEx/app/src/main/res/layout/fragment_search.xml" value="0.17028985507246377" />
-        <entry key="..\:/Users/admin/AndroidStudioProjects/Final_Project/app/src/main/res/layout/mylist.xml" value="0.1068840579710145" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/Final_Project/app/src/main/res/layout-land/fragment_home.xml" value="0.12291666666666666" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/Final_Project/app/src/main/res/layout-land/mylist.xml" value="0.12291666666666666" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/Final_Project/app/src/main/res/layout/fragment_home.xml" value="0.33" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/Final_Project/app/src/main/res/layout/mylist.xml" value="0.2" />
         <entry key="..\:/Users/admin/AndroidStudioProjects/Final_Project/app/src/main/res/layout/toast_layout.xml" value="0.1068840579710145" />
       </map>
     </option>
