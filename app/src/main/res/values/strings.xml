@@ -26,4 +26,5 @@
     <string name="minimum_age">Minimum age :</string>
     <string name="car_rental_app" translatable="false">Car rental app</string>
     <string name="cars_rent" translatable="false">Cars Rent</string>
+    <string name="welcome_name">welcome_name</string>
 </resources>

@@ -179,11 +179,6 @@ public class SignUpActivity extends AppCompatActivity {
                                                         @Override
                                                         public void onComplete(@NonNull Task<DocumentReference> task) {
                                                             if (task.isSuccessful()) {
-                                                                if (Locale.getDefault().getLanguage().equals("en")) {
-                                                                    Toast_True("Welcome " + Name);
-                                                                } else if (Locale.getDefault().getLanguage().equals("ar")) {
-                                                                    Toast_True(Name + "مـرحبـاً ");
-                                                                }
 
                                                                 startActivity(new Intent(SignUpActivity.this, mainboard.class));
                                                                 finish();

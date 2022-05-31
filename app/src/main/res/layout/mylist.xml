@@ -6,7 +6,9 @@
     android:layout_height="wrap_content"
     android:clickable="true"
     app:cardCornerRadius="5dp"
+
     app:cardElevation="5dp"
+    android:layout_marginBottom="30dp"
     app:cardUseCompatPadding="true">
 
     <LinearLayout
@@ -58,6 +60,13 @@
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 android:textStyle="bold" />
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/ic_baseline_favorite_24"
+                />
         </LinearLayout>
 
 

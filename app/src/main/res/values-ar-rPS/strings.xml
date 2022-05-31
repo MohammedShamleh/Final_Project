@@ -24,6 +24,7 @@
     <string name="minimum_age">الحد الإدنى للعمر :</string>
     <string name="car_rental_app">Car rental app</string>
     <string name="cars_rent">Cars Rent</string>
+    <string name="welcome_name">أهلاً بك </string>
 
 
 </resources>

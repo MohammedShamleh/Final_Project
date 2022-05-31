@@ -17,7 +17,7 @@
         android:scaleType="centerCrop"
         android:src="@drawable/bulls_rent_logo_white"
         android:transitionName="imageLogo"
-       android:layout_marginBottom="80dp"     />
+       android:layout_marginBottom="20dp"     />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -140,7 +140,7 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:layout_marginTop="10dp"
-
+       android:layout_marginBottom="60dp"
         android:id="@+id/btnlogout"
         style="@style/TextAppearance.MaterialComponents.Button"
         android:layout_width="match_parent"
