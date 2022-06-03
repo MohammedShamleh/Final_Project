@@ -65,7 +65,7 @@
                 android:layout_height="30dp"
                 android:layout_weight="1"
                 android:layout_marginStart="10dp"
-                android:src="@drawable/ic_baseline_favorite_24"
+                android:src="@drawable/ic_not_favorite_border_24"
                 />
         </LinearLayout>
 

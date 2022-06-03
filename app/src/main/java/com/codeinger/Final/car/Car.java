@@ -23,7 +23,7 @@ public class Car {
         this.img = img;
         Name = name;
         Transmission = transmission;
-         isFav =0;
+         isFav = 0;
     }
 
     public Car() {

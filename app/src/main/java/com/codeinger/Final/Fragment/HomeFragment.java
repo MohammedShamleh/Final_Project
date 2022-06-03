@@ -45,7 +45,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {
                 if (task.isSuccessful()) {
-              //      Toast.makeText(getActivity(), "dtat sss ", Toast.LENGTH_SHORT).show();
+
 
                     Iterable<DataSnapshot> data = task.getResult().getChildren();
 
