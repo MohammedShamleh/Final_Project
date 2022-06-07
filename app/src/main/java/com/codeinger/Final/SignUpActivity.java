@@ -174,12 +174,11 @@ public class SignUpActivity extends AppCompatActivity {
                                                     data.put("Username", Username);
                                                     data.put("Email", Email);
                                                     data.put("PhoneNo", PhoneNo);
-
-                                                    firebaseFirestore.collection("user").add(data).addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
+                                           firebaseFirestore.collection("user")
+                                                   .add(data).addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
                                                         @Override
                                                         public void onComplete(@NonNull Task<DocumentReference> task) {
                                                             if (task.isSuccessful()) {
-
                                                                 startActivity(new Intent(SignUpActivity.this, mainboard.class));
                                                                 finish();
                                                             }
@@ -204,10 +203,7 @@ public class SignUpActivity extends AppCompatActivity {
                             Toast_Error("تحقق من اتصالك بالإنترنت");
                         }
                     }
-
                 }
-
-
             });
         }
     }
